@@ -1,6 +1,8 @@
 <div align="center">
 
-# 🌊 Pravāha (प्रवाह)
+<img src="assets/images/logo.png" alt="Pravāha Logo" width="120" style="border-radius: 24px; box-shadow: 0 4px 20px rgba(0, 106, 106, 0.2);" />
+
+# Pravāha (प्रवाह)
 ### Offline Speech Therapy & Fluency Companion
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.29-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
@@ -17,15 +19,15 @@
 
 ---
 
-## 📖 Overview
+## Overview
 
-**Pravāha (प्रवाह)** is an evidence-based speech therapy, stuttering management, and articulation training mobile app. It provides clinically structured motor speech conditioning, real-time visual and rhythmic biofeedback, and progressive difficulty ladders to help individuals who stutter, experience speech blocks, or want to improve speech clarity.
+**Pravāha (प्रवाह)** is an evidence-based speech therapy, stuttering management, and articulation training mobile application. It provides clinically structured motor speech conditioning, real-time visual and rhythmic biofeedback, and progressive difficulty ladders to help individuals who stutter, experience speech blocks, or want to improve speech clarity.
 
 All audio processing, visual biofeedback, and progress tracking run completely on-device without requiring any internet connection.
 
 ---
 
-## 🎯 Targeted Trouble Sound Mastery (S, CH, F, P)
+## Targeted Trouble Sound Mastery (S, CH, F, P)
 
 Pravāha includes dedicated phonetic progression ladders specifically designed to overcome speech blocks on difficult initial consonants and consonant blends:
 
@@ -38,9 +40,9 @@ Pravāha includes dedicated phonetic progression ladders specifically designed t
 
 ---
 
-## 🩺 32+ Clinical Exercises Across 6 Modules
+## 32+ Clinical Exercises Across 6 Modules
 
-### 1. 🗣️ Articulation & Precision Practice
+### 1. Articulation & Precision Practice
 * **The Bite Block Reader**: Dual 60s obstructed/free reading timer for effortless jaw opening and enunciation.
 * **Plosive Explosion Drills**: Rapid 10s intervals for P $\rightarrow$ T $\rightarrow$ K $\rightarrow$ B consonant bursts.
 * **Front-to-Back Tongue Alternation**: Rapid motor switching between T-K and P-K syllable pairs.
@@ -48,7 +50,7 @@ Pravāha includes dedicated phonetic progression ladders specifically designed t
 * **Exaggerated Jaw Drops**: Masseter muscle stretching to counteract closed-mouth tension.
 * **Dental-Labial Shifts**: 30-second rapid tooth-to-lip agility drills (F-P).
 
-### 2. 👅 Oral Motor Conditioning
+### 2. Oral Motor Conditioning
 * **Tongue Roof-Press**: 5s hold / 2s rest lingual-base isometric strengthening.
 * **Inside-Cheek Resistance Pushes**: Lateral tongue stability with finger resistance.
 * **Tongue Tip Circles**: Full circumduction for range-of-motion and lubrication.
@@ -56,27 +58,27 @@ Pravāha includes dedicated phonetic progression ladders specifically designed t
 * **Alveolar Ridge "Spot" Tap**: Independent tongue-tip elevation without jaw movement.
 * **The Lip Pop**: Intraoral air pressure buildup and clean bilateral seal release.
 
-### 3. 🫁 Breath Support & Vocal Volume
+### 3. Breath Support & Vocal Volume
 * **Diaphragmatic Belly Book Balance**: 2-minute calming diaphragmatic breath training.
 * **Hissing Resistance Exhale**: Stopwatch with automated **Personal Best** tracking.
 * **Pitch Glissando / Siren**: Full dynamic range pitch glides on "Oooo".
 * **Volume Escalator (1 to 5)**: Step up diaphragmatic projection (Whisper $\rightarrow$ Soft $\rightarrow$ Conversational $\rightarrow$ Boardroom $\rightarrow$ Presentation).
 * **Wall-Sit "Ah" Sustenance**: Core-anchored subglottic breath support.
 
-### 4. ⏱️ Fluency, Pacing & Rhythm
+### 4. Fluency, Pacing & Rhythm
 * **Finger Syllable Tapping**: Multi-modal rhythmic motor pacing (40–120 BPM).
 * **Paused Phrase Chunk Check**: 3–4 word chunked reading with deliberate resting pauses.
 * **Easy Onset Breathed Phrases**: Vocal fold abduction training with soft "hhhh-" prefix.
 * **Continuous Phonation Legato**: Unbroken vocal resonance across word boundaries.
 
-### 5. 🧠 Cognitive-Linguistic & Word Finding
+### 5. Cognitive-Linguistic & Word Finding
 * **Rapid Convergent Naming**: Top-down semantic umbrella category challenges.
 * **Divergent Category Sprint**: 60-second rapid lexical retrieval sprint (15+ items).
 * **Word Association Chains**: Continuous 20-word associative momentum chains.
 * **Alphabetical Object Hunt**: Interactive 26-letter A-Z environmental scanner grid.
 * **5-Attribute Object Description**: Rapid adjective retrieval and sentence assembly checklist.
 
-### 6. 🛡️ Stuttering Modification / Van Riper Techniques
+### 6. Stuttering Modification / Van Riper Techniques
 * **Preparatory Sets (Pre-Blocks)**: Anticipate difficulty and configure articulators into relaxed posture.
 * **Pull-Outs (Ease-Outs)**: Voluntarily ease and slide out of active blocks mid-utterance.
 * **Cancellations**: Post-block pause, reflection, and fluent re-production.
@@ -84,27 +86,27 @@ Pravāha includes dedicated phonetic progression ladders specifically designed t
 * **Prolongation (Stretched Speech)**: Syllable elongation with auditory feedback.
 * **Progressive Speech Muscle Relaxation**: Somatic tension-and-release cycles for jaw, tongue, and neck.
 
-### 7. 🎭 Real-World Speaking Scenarios
+### 7. Real-World Speaking Scenarios
 * **Ordering at a Cafe**: Time-pressured ordering dialogue with strategy coaching.
 * **Answering a Phone Call**: Self-introduction and date/time clear enunciation.
 * **Group Self-Introduction**: Social composure and breathing management.
 
 ---
 
-## 📱 Interactive Practice Screen Engines
+## Interactive Practice Screen Engines
 
 Pravāha includes 6 purpose-built offline practice screen engines:
 
-* ⏱️ **`TimedExerciseScreen`**: Circular countdown progress ring, split-phase transitions, and soothing breath palettes.
-* 🔢 **`RepCounterScreen`**: Tap-to-count repetitions, automated 5s hold / 2s release state machines with haptic cues, and 5-attribute checklists.
-* ⚡ **`StopwatchScreen`**: Millisecond precision airflow timers with historical Personal Best persistence.
-* 📊 **`StepperExerciseScreen`**: Multi-stage volume & plosive drills with stage timers and auto-advancement.
-* 🪜 **`WordProgressionScreen`**: Sound-specific word ladder trainer with phonetic cards, clinical tips, and instant audio playback.
-* 🔤 **`AlphaGridScreen`**: Interactive 26-letter responsive A-Z object hunt grid with skip actions.
+* **`TimedExerciseScreen`**: Circular countdown progress ring, split-phase transitions, and soothing breath palettes.
+* **`RepCounterScreen`**: Tap-to-count repetitions, automated 5s hold / 2s release state machines with haptic cues, and 5-attribute checklists.
+* **`StopwatchScreen`**: Millisecond precision airflow timers with historical Personal Best persistence.
+* **`StepperExerciseScreen`**: Multi-stage volume & plosive drills with stage timers and auto-advancement.
+* **`WordProgressionScreen`**: Sound-specific word ladder trainer with phonetic cards, clinical tips, and instant audio playback.
+* **`AlphaGridScreen`**: Interactive 26-letter responsive A-Z object hunt grid with skip actions.
 
 ---
 
-## 🛠️ Architecture & Tech Stack
+## Architecture & Tech Stack
 
 * **Framework**: Flutter 3.29 / Dart 3.7
 * **Rendering Engine**: Impeller (Vulkan backend on Android)
@@ -128,7 +130,7 @@ lib/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 * Flutter SDK (3.27+ or 3.29+)
@@ -161,7 +163,7 @@ The output APK is generated at:
 
 ---
 
-## 🔒 Privacy
+## Privacy
 
 Pravāha is strictly **100% offline**:
 * No voice data ever leaves your device.
@@ -170,7 +172,7 @@ Pravāha is strictly **100% offline**:
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Harshit Waldia**
 * GitHub: [@HarshitWaldia](https://github.com/HarshitWaldia)
@@ -178,6 +180,6 @@ Pravāha is strictly **100% offline**:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
