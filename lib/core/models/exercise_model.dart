@@ -7,9 +7,11 @@ enum ExerciseCategory {
   fluencyPacing,
   cognitiveLinguistic,
   stutteringModification,
+  stammeringTypes,
   reading,
   scenario,
 }
+
 
 enum ExerciseType {
   timer,           // Countdown timer (Bite Block, Jaw Drops)
@@ -89,8 +91,11 @@ class Exercise {
         return 'Cognitive-Linguistic';
       case ExerciseCategory.stutteringModification:
         return 'Stuttering Modification';
+      case ExerciseCategory.stammeringTypes:
+        return 'Stammering Types & Block Mastery';
       case ExerciseCategory.reading:
         return 'Paired Reading';
+
       case ExerciseCategory.scenario:
         return 'Real-World Scenario';
     }

@@ -1,4 +1,6 @@
 import '../models/exercise_model.dart';
+import 'sentence_practice_database.dart';
+
 
 /// Complete, 100% offline clinical exercise library for Pravāha.
 /// Covers:
@@ -10,7 +12,8 @@ import '../models/exercise_model.dart';
 /// 6. Stuttering Modification & Stamurai Techniques (6 drills)
 /// Plus Paired Reading & Scenarios.
 class ClinicalExerciseLibrary {
-  static const List<Exercise> allExercises = [
+  static final List<Exercise> allExercises = [
+
     // =========================================================================
     // MODULE 1: ARTICULATION & PRECISION (6 EXERCISES)
     // =========================================================================
@@ -771,5 +774,716 @@ class ClinicalExerciseLibrary {
         'Patience and consistency are the foundations of true vocal freedom.',
       ],
     ),
+
+    // =========================================================================
+    // MODULE 3 EXTENDED: 8 ADVANCED BREATHING EXERCISES
+    // =========================================================================
+    Exercise(
+      id: 'breath_06_box_breathing',
+      title: 'Box Breathing (4-4-4-4)',
+      description:
+          'Inhale 4s, hold 4s, exhale 4s, hold 4s. Navy SEAL protocol for autonomic speech anxiety reset.',
+      clinicalRationale:
+          'Equalizes sympathetic and parasympathetic autonomic branches, reducing heart rate and pre-speech panic spikes.',
+      category: ExerciseCategory.breathSupport,
+      exerciseType: ExerciseType.timer,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 120,
+      instructionDetail:
+          'Follow the soothing 4-phase box: Inhale 4s -> Hold full 4s -> Exhale 4s -> Hold empty 4s. Complete for 2 calming minutes.',
+      tips: [
+        'Keep shoulders relaxed during the breath holds.',
+        'Do not clamp the throat during the holds; close the airway gently.',
+      ],
+      promptLines: [
+        'Phase 1: Inhale through nose (4s)',
+        'Phase 2: Hold gently (4s)',
+        'Phase 3: Exhale smoothly (4s)',
+        'Phase 4: Rest empty (4s)',
+      ],
+    ),
+    Exercise(
+      id: 'breath_07_resonant_breathing',
+      title: 'Resonant 5.5s Breathing',
+      description:
+          'Inhale for 5.5s and exhale for 5.5s (approx. 5.5 breaths per minute) to maximize Heart Rate Variability.',
+      clinicalRationale:
+          '5.5 BPM breathing synchronizes respiratory sinus arrhythmia with baroreflex oscillations for maximal neurovascular relaxation.',
+      category: ExerciseCategory.breathSupport,
+      exerciseType: ExerciseType.timer,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 120,
+      instructionDetail:
+          'Breathe in slowly for 5.5 seconds expanding the belly, then release gently for 5.5 seconds. Repeat for 2 minutes before challenging speaking tasks.',
+      tips: [
+        'Feel the smooth circular transition between in-breath and out-breath.',
+        'Keep chest still and expand belly 360 degrees.',
+      ],
+      promptLines: [
+        'Inhale slowly (5.5s) — Belly expands gently',
+        'Exhale smoothly (5.5s) — Belly falls naturally',
+      ],
+    ),
+    Exercise(
+      id: 'breath_08_staccato_exhale',
+      title: 'Staccato "Ha-Ha-Ha" Breath',
+      description:
+          'Pulsed abdominal contractions on rapid unvoiced breaths to condition diaphragm response speed.',
+      clinicalRationale:
+          'Conditions the rapid recruitment of the rectus abdominis and transversus abdominis for quick subglottic air replenishment.',
+      category: ExerciseCategory.breathSupport,
+      exerciseType: ExerciseType.repCounter,
+      difficulty: ExerciseDifficulty.intermediate,
+      repTarget: 5,
+      instructionDetail:
+          'Take a deep breath. Release 5 rapid, pulsed "Ha! Ha! Ha! Ha! Ha!" bursts from your belly without voicing. Tap counter for each set of 5. Complete 5 sets.',
+      tips: [
+        'Place your hand on your navel—feel it bounce inward on every "Ha".',
+        'Keep throat wide and silent.',
+      ],
+    ),
+    Exercise(
+      id: 'breath_09_pursed_lip',
+      title: 'Pursed Lip Resistance Exhale',
+      description:
+          'Exhale through tiny puckered lips to create back-pressure and lengthen the expiratory speaking phase.',
+      clinicalRationale:
+          'Increases positive end-expiratory pressure, strengthening respiratory muscle endurance and steadying phonatory airflow.',
+      category: ExerciseCategory.breathSupport,
+      exerciseType: ExerciseType.stopwatch,
+      difficulty: ExerciseDifficulty.intermediate,
+      instructionDetail:
+          'Inhale deeply through nose. Pucker lips like whistling. Tap Start and exhale through the tiny opening as slowly and evenly as possible. Tap Stop when empty to log your Personal Best.',
+      tips: [
+        'Aim for a thin, steady stream of cool air.',
+        'Target goal: 20 to 35 seconds.',
+      ],
+    ),
+    Exercise(
+      id: 'breath_10_lateral_ribcage',
+      title: 'Lateral Ribcage 3D Expansion',
+      description:
+          'Place hands on lower ribs and expand horizontally like an accordion on the inhale.',
+      clinicalRationale:
+          'Trains lower intercostal activation and prevents upper-clavicular shallow panic breathing.',
+      category: ExerciseCategory.breathSupport,
+      exerciseType: ExerciseType.timer,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 120,
+      instructionDetail:
+          'Place both palms firmly against your lower side ribs. Inhale deeply and push your hands outward with your expanding ribcage. Exhale as ribs knit back inward.',
+      tips: [
+        'Feel the side and back expansion, not just front belly.',
+        'Keep neck muscles completely limp.',
+      ],
+      promptLines: [
+        'Inhale: Push ribs outward into your hands.',
+        'Exhale: Feel ribs gently recoil inward.',
+      ],
+    ),
+    Exercise(
+      id: 'breath_11_candle_flame',
+      title: 'The Candle Flame Sustain',
+      description:
+          'Hold finger 4 inches from mouth. Exhale a steady air stream that would bend a flame without blowing it out.',
+      clinicalRationale:
+          'Develops laminar airflow regulation, eliminating turbulent air surges that trigger laryngeal spasms.',
+      category: ExerciseCategory.breathSupport,
+      exerciseType: ExerciseType.stopwatch,
+      difficulty: ExerciseDifficulty.intermediate,
+      instructionDetail:
+          'Hold index finger in front of lips. Inhale deeply. Tap Start and blow a micro-thin, steady, warm stream of air. Maintain unbroken pressure until empty. Tap Stop to record your PB.',
+      tips: [
+        'The air temperature on your finger should feel consistently warm and gentle.',
+        'Do not let the stream flicker or sputter.',
+      ],
+    ),
+    Exercise(
+      id: 'breath_12_4_7_8_calm',
+      title: '4-7-8 Pre-Speech Anxiety Calming',
+      description:
+          'Inhale 4s through nose, hold 7s, whoosh exhale 8s. Proven vagus nerve stimulator before presentations.',
+      clinicalRationale:
+          'Dr. Andrew Weil’s 4-7-8 breathing triggers parasympathetic acetylcholine release, relaxing hypertonic speech musculature.',
+      category: ExerciseCategory.breathSupport,
+      exerciseType: ExerciseType.timer,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 120,
+      instructionDetail:
+          'Inhale quietly through nose for 4s. Hold breath comfortably for 7s. Make a whoosh sound exhaling through mouth for 8s. Repeat for 4 full cycles (2 mins).',
+      tips: [
+        'The 8-second exhale is the most important part.',
+        'Feel your heartbeat slow down naturally.',
+      ],
+      promptLines: [
+        'Inhale through nose (4s)',
+        'Hold breath calmly (7s)',
+        'Whoosh exhale through mouth (8s)',
+      ],
+    ),
+    Exercise(
+      id: 'breath_13_sigh_to_speech',
+      title: 'The Sigh-to-Speech Glide',
+      description:
+          'Release a relaxed audible sigh ("Ahhhh") and effortlessly glide directly into a spoken phrase.',
+      clinicalRationale:
+          'Bridges natural vegetative phonation (sighing) into intentional propositional speech without throat locks.',
+      category: ExerciseCategory.breathSupport,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 120,
+      tips: [
+        'Let the sigh be 100% genuine and heavy.',
+        'Ride the wave of the sigh straight into the words.',
+      ],
+      promptLines: SentencePracticeDatabase.breathSpeechIntegration.take(12).toList(),
+    ),
+
+    // =========================================================================
+    // MODULE 1 EXTENDED: 5-LEVEL BITE-BLOCK / PEN-IN-MOUTH MASTERY
+    // =========================================================================
+    Exercise(
+      id: 'art_07_bite_block_l1',
+      title: 'Bite Block Level 1: Isolated Sounds',
+      description:
+          'Hold a clean pen/cork gently between front teeth and articulate pure consonant targets (/s/, /p/, /t/, /k/).',
+      clinicalRationale:
+          'De-links jaw movement from isolated tongue and lip placements, training pure articulatory independence.',
+      category: ExerciseCategory.articulation,
+      exerciseType: ExerciseType.timer,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 60,
+      instructionDetail:
+          'Place pen gently between incisors. Rapidly produce the target sounds with maximum clarity for 60 seconds.',
+      tips: [
+        'Hold pen lightly with teeth; do not bite down with jaw tension.',
+        'Move only your tongue and lips.',
+      ],
+      promptLines: [
+        'S-S-S-S (Tongue channels air over groove)',
+        'P-P-P-P (Lips seal around the pen and pop)',
+        'T-T-T-T (Tongue tip strikes alveolar ridge)',
+        'K-K-K-K (Back of tongue lifts to soft palate)',
+      ],
+    ),
+    Exercise(
+      id: 'art_08_bite_block_l2',
+      title: 'Bite Block Level 2: Single Words',
+      description:
+          'Pronounce 1-2 syllable target words with pen between teeth, then repeat freely without pen.',
+      clinicalRationale:
+          'Conditions coarticulation agility under mechanical obstruction.',
+      category: ExerciseCategory.articulation,
+      exerciseType: ExerciseType.timer,
+      difficulty: ExerciseDifficulty.intermediate,
+      durationSeconds: 90,
+      splitTimer: true,
+      instructionDetail:
+          'Phase 1 (45s): Read words with pen in mouth, enunciating every syllable.\nPhase 2 (45s): Remove pen and repeat words freely with effortless openness.',
+      tips: [
+        'Over-exaggerate lip and tongue motions during Phase 1.',
+        'Notice how light and crisp your speech feels in Phase 2.',
+      ],
+      promptLines: [
+        'Phase 1 (Pen in): Sun, Chair, Fan, Pool, Tiger, Ocean, Kitchen, Paper',
+        'Phase 2 (Pen out): Repeat freely with effortless oral opening.',
+      ],
+    ),
+    Exercise(
+      id: 'art_09_bite_block_l3',
+      title: 'Bite Block Level 3: Short Sentences',
+      description:
+          'Read 5-8 word sentences with pen obstruction (60s), then freely (60s).',
+      clinicalRationale:
+          'Generalizes lingual-mandibular dissociation to connected syntactic phrases.',
+      category: ExerciseCategory.articulation,
+      exerciseType: ExerciseType.timer,
+      difficulty: ExerciseDifficulty.intermediate,
+      durationSeconds: 120,
+      splitTimer: true,
+      instructionDetail:
+          'Phase 1 (60s): Place pen between teeth and read sentences out loud.\nPhase 2 (60s): Remove pen and read with wide, relaxed jaw drops.',
+      tips: [
+        'Do not let consonants slur during Phase 1.',
+        'Feel the dramatic surge in clarity during Phase 2.',
+      ],
+      promptLines: SentencePracticeDatabase.initialBlocks.take(6).toList(),
+    ),
+    Exercise(
+      id: 'art_10_bite_block_l4',
+      title: 'Bite Block Level 4: Paragraph Reading',
+      description:
+          'Read a full literary paragraph with bite block (90s), followed by open expressive reading (90s).',
+      clinicalRationale:
+          'Builds prolonged articulatory endurance and hyper-clarity across extended paragraph reading.',
+      category: ExerciseCategory.articulation,
+      exerciseType: ExerciseType.timer,
+      difficulty: ExerciseDifficulty.advanced,
+      durationSeconds: 180,
+      splitTimer: true,
+      instructionDetail:
+          'Phase 1 (90s): Read the passage with pen between teeth.\nPhase 2 (90s): Remove pen immediately and read with full vocal projection and effortless ease.',
+      tips: [
+        'Take deep belly breaths at commas.',
+        'Enjoy the effortless sensation in Phase 2.',
+      ],
+      promptLines: [
+        SentencePracticeDatabase.bookReadingPassages[0],
+        SentencePracticeDatabase.bookReadingPassages[1],
+      ],
+    ),
+    Exercise(
+      id: 'art_11_bite_block_l5',
+      title: 'Bite Block Level 5: Conversational Q&A',
+      description:
+          'Answer simulated real-world questions with pen between teeth, then answer freely.',
+      clinicalRationale:
+          'Spontaneous cognitive-linguistic formulation under articulatory load trains subconscious muscle clarity.',
+      category: ExerciseCategory.articulation,
+      exerciseType: ExerciseType.timer,
+      difficulty: ExerciseDifficulty.advanced,
+      durationSeconds: 180,
+      splitTimer: true,
+      instructionDetail:
+          'Phase 1 (90s): Answer the questions aloud with pen in mouth.\nPhase 2 (90s): Remove pen and speak freely with crystal clarity.',
+      tips: [
+        'Speak in full, complete sentences.',
+        'Maintain eye contact with your reflection or an object in the room.',
+      ],
+      promptLines: [
+        'Q1: What are your three favorite hobbies and why?',
+        'Q2: Describe your ideal morning routine step-by-step.',
+        'Q3: What is a project or skill you are currently working on?',
+      ],
+    ),
+
+    // =========================================================================
+    // MODULE 8: 16 TARGETED STAMMERING TYPE & BLOCK MASTERY EXERCISES
+    // =========================================================================
+    // TYPE 1: INITIAL WORD BLOCKS (5 EXERCISES)
+    Exercise(
+      id: 'st_init_01_s',
+      title: 'Type 1: Initial "S" Block Mastery',
+      description:
+          'Master initial S-blocks ("S-s-s-un") using continuous air-channeling and easy glide onsets.',
+      clinicalRationale:
+          'Initial S-blocks occur when tongue jams hard against the alveolar ridge. Continuous airflow sighing prevents the pressure lock.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 120,
+      tips: [
+        'Start with a soft, trailing hiss of air before voicing the vowel.',
+        'Keep teeth close but cheek muscles soft.',
+      ],
+      promptLines: SentencePracticeDatabase.initialBlocks.where((s) => s.startsWith('Sssss')).take(10).toList(),
+    ),
+    Exercise(
+      id: 'st_init_02_p',
+      title: 'Type 1: Initial "P" Block Mastery',
+      description:
+          'Master initial P-blocks ("P-p-p-en") using butterfly-light lip contact and breathed "h-P!" onsets.',
+      clinicalRationale:
+          'Initial P-blocks happen from high isometric lip squeeze. Breathed onset and micro-touch releases pressure effortlessly.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 120,
+      tips: [
+        'Let out a tiny puff of air right before popping ("h-Pool").',
+        'Touch lips together as gently as butterfly wings.',
+      ],
+      promptLines: SentencePracticeDatabase.initialBlocks.where((s) => s.startsWith('P!')).take(10).toList(),
+    ),
+    Exercise(
+      id: 'st_init_03_ch',
+      title: 'Type 1: Initial "CH" Block Mastery',
+      description:
+          'Master initial CH-blocks ("Ch-ch-chair") using palatal preparatory sets and clean affricate bursts.',
+      clinicalRationale:
+          'Initial CH-blocks combine tongue clamping and laryngeal tension. Proper lip pucker and light contact creates an effortless burst.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.intermediate,
+      durationSeconds: 120,
+      tips: [
+        'Pucker lips slightly forward and drop jaw freely into the vowel.',
+        'Explode the sound out like a soft sneeze without throat squeeze.',
+      ],
+      promptLines: SentencePracticeDatabase.initialBlocks.where((s) => s.startsWith('T-S-H')).take(10).toList(),
+    ),
+    Exercise(
+      id: 'st_init_04_f',
+      title: 'Type 1: Initial "F" Block Mastery',
+      description:
+          'Master initial F-blocks ("F-f-f-an") by gently placing top teeth on bottom lip without biting.',
+      clinicalRationale:
+          'F-blocks occur from hard downward incisor biting. Light positioning allows continuous airflow escape.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 120,
+      tips: [
+        'Feel the warm air escaping freely between teeth and lip.',
+        'Voice only when opening into the vowel.',
+      ],
+      promptLines: SentencePracticeDatabase.initialBlocks.where((s) => s.startsWith('Ffffff')).take(10).toList(),
+    ),
+    Exercise(
+      id: 'st_init_05_vowel',
+      title: 'Type 1: Initial Vowel & Glottal Blocks',
+      description:
+          'Master hard vowel blocks ("A-a-apple") using soft "hhhh-" Easy Onset breath prefixes.',
+      clinicalRationale:
+          'Vowel initial blocks are hard glottal attacks where vocal folds slam shut. An unvoiced breath prefix guarantees open fold phonation.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 120,
+      tips: [
+        'Prefix every word with a gentle whisper of air ("hhhh-Apple").',
+        'Open throat wide like a morning yawn.',
+      ],
+      promptLines: SentencePracticeDatabase.initialBlocks.where((s) => s.startsWith('hhhh')).take(10).toList(),
+    ),
+
+    // TYPE 2: MEDIAL WORD BLOCKS (4 EXERCISES)
+    Exercise(
+      id: 'st_med_01_plosive',
+      title: 'Type 2: Medial Plosive Escape',
+      description:
+          'Overcome middle-of-word locks on "captain", "happy", "apple" using Van Riper Pull-Outs.',
+      clinicalRationale:
+          'Medial blocks happen during the transition from vowel to consonant. Slowing down and stretching the medial consonant eases out the block.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.intermediate,
+      durationSeconds: 120,
+      tips: [
+        'On the medial consonant, ease muscular pressure and stretch the sound out.',
+        'Do not stop voicing; pull out smoothly into the final vowel.',
+      ],
+      promptLines: SentencePracticeDatabase.medialBlocks.take(12).toList(),
+    ),
+    Exercise(
+      id: 'st_med_02_fricative',
+      title: 'Type 2: Medial Fricative Flow',
+      description:
+          'Flow through middle fricatives in "coffee", "office", "messy" with continuous phonation.',
+      clinicalRationale:
+          'Maintains unbroken laryngeal vibration across the middle syllable boundary.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.intermediate,
+      durationSeconds: 120,
+      tips: [
+        'Hold the middle consonant for an extra half-second without stopping airflow.',
+        'Keep lips and cheeks soft and relaxed.',
+      ],
+      promptLines: SentencePracticeDatabase.medialBlocks.skip(12).take(12).toList(),
+    ),
+    Exercise(
+      id: 'st_med_03_affricate',
+      title: 'Type 2: Medial Affricate Light Touch',
+      description:
+          'Master middle affricates in "kitchen", "nature", "bridge" with light articulatory contact.',
+      clinicalRationale:
+          'Prevents palatal suction locks in multi-syllabic words through feather-touch placement.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.intermediate,
+      durationSeconds: 120,
+      tips: [
+        'Trap air lightly in the middle of the word and release with a soft pop.',
+        'Keep vocal tone resonant throughout the word.',
+      ],
+      promptLines: SentencePracticeDatabase.medialBlocks.skip(24).take(12).toList(),
+    ),
+    Exercise(
+      id: 'st_med_04_vowel_bridge',
+      title: 'Type 2: Medial Vowel-to-Vowel Bridge',
+      description:
+          'Connect multi-syllabic words like "beautiful", "restaurant", "patience" without mid-word hesitation.',
+      clinicalRationale:
+          'Stretches the vowel resonance channel across intermediate consonants, eliminating restart points.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.intermediate,
+      durationSeconds: 120,
+      tips: [
+        'Think of the word as a single continuous vowel stream carrying light consonants.',
+        'Maintain diaphragmatic air support through the middle of the word.',
+      ],
+      promptLines: SentencePracticeDatabase.medialBlocks.skip(36).take(12).toList(),
+    ),
+
+    // TYPE 3: FINAL WORD BLOCKS (3 EXERCISES)
+    Exercise(
+      id: 'st_fin_01_plosive',
+      title: 'Type 3: Final Plosive Release',
+      description:
+          'End words cleanly on "stop", "cup", "help" with a trailing pop and relaxed jaw release.',
+      clinicalRationale:
+          'Final blocks occur when speakers clamp articulators shut at word end in anticipation of finishing. Releasing into open breath prevents clamping.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 120,
+      tips: [
+        'Pop the final consonant and immediately drop your jaw into relaxed open air.',
+        'Do not clamp lips or tongue shut at the end of the word.',
+      ],
+      promptLines: SentencePracticeDatabase.finalBlocks.take(12).toList(),
+    ),
+    Exercise(
+      id: 'st_fin_02_fricative',
+      title: 'Type 3: Final Fricative Stream',
+      description:
+          'End words smoothly on "bus", "leaf", "roof" with an effortless fading air stream.',
+      clinicalRationale:
+          'Maintains open vocal tract posture right through the completion of phonation.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 120,
+      tips: [
+        'Let the final sound fade out like a gentle sigh on your bottom lip.',
+        'Avoid chopping the trailing sound short.',
+      ],
+      promptLines: SentencePracticeDatabase.finalBlocks.skip(12).take(12).toList(),
+    ),
+    Exercise(
+      id: 'st_fin_03_cancellation',
+      title: 'Type 3: Post-Block Cancellation Drill',
+      description:
+          'If you block on a word: finish it -> pause 2s -> analyze tension -> repeat with gentle ease.',
+      clinicalRationale:
+          'Van Riperian Cancellation gives the speech motor cortex a successful, relaxed repetition immediately following a struggle, extinguishing fear pathways.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.intermediate,
+      durationSeconds: 120,
+      tips: [
+        'The 2-second pause is essential for neuromuscular resetting.',
+        'Say the second repetition with 50% less physical effort.',
+      ],
+      promptLines: SentencePracticeDatabase.finalBlocks.skip(24).take(12).toList(),
+    ),
+
+    // TYPE 4: CONNECTED SPEECH & INTER-WORD BLOCKS (2 EXERCISES)
+    Exercise(
+      id: 'st_conn_01_interword',
+      title: 'Type 4: Inter-Word Legato Linking',
+      description:
+          'Link the ending of every word directly into the start of the next like a flowing musical piece.',
+      clinicalRationale:
+          'Connected speech blocks happen at the restart of vocal cord vibration between words. Continuous linking eliminates the restarts entirely.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.metronome,
+      difficulty: ExerciseDifficulty.intermediate,
+      defaultBpm: 60,
+      durationSeconds: 120,
+      tips: [
+        'Do not stop vocal cord vibration between words.',
+        'Think of your voice as a cello bow moving continuously across strings.',
+      ],
+      promptLines: SentencePracticeDatabase.connectedSpeechBlocks.take(12).toList(),
+    ),
+    Exercise(
+      id: 'st_conn_02_chunking',
+      title: 'Type 4: Paused Phrase Chunking',
+      description:
+          'Read sentences in 3-4 word chunked groups with deliberate diaphragmatic resets at every slash.',
+      clinicalRationale:
+          'Prevents air starvation and rush-induced connected speech blocks during long sentences.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 120,
+      tips: [
+        'Honor the slash pause—take a silent belly breath.',
+        'Speak each chunk smoothly on a single exhale.',
+      ],
+      promptLines: SentencePracticeDatabase.connectedSpeechBlocks.skip(12).take(12).toList(),
+    ),
+
+    // COMBINED ALL-TYPE MASTER EXERCISES (2 EXERCISES)
+    Exercise(
+      id: 'st_comb_01_full_cascade',
+      title: 'Combined: The Full Cascade Drill',
+      description:
+          'Practice sentences containing all 4 block positions (Initial, Medial, Final, and Connected) in one phrase.',
+      clinicalRationale:
+          'Comprehensive multi-position motor integration builds robust speech confidence across all phonetic environments.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.advanced,
+      durationSeconds: 180,
+      tips: [
+        'Apply easy onset on initial words, pull-outs on medial words, clean release on final words, and legato linking between.',
+        'Take your time and celebrate full control.',
+      ],
+      promptLines: SentencePracticeDatabase.combinedAllTypes.take(15).toList(),
+    ),
+    Exercise(
+      id: 'st_comb_02_real_world',
+      title: 'Combined: Conversational Mastery',
+      description:
+          'Real-world conversational sentences with mixed block targets for complete day-to-day generalization.',
+      clinicalRationale:
+          'Prepares the speaker for spontaneous, high-pressure conversations in professional and social settings.',
+      category: ExerciseCategory.stammeringTypes,
+      exerciseType: ExerciseType.metronome,
+      difficulty: ExerciseDifficulty.advanced,
+      defaultBpm: 75,
+      durationSeconds: 180,
+      tips: [
+        'Match each syllable to the pacer pulse.',
+        'Keep your body grounded, shoulders down, and breath deep.',
+      ],
+      promptLines: SentencePracticeDatabase.combinedAllTypes.skip(15).take(15).toList(),
+    ),
+
+    // =========================================================================
+    // MODULE 7 EXTENDED: 8 FULL READING PASSAGES
+    // =========================================================================
+    Exercise(
+      id: 'reading_02_mountain',
+      title: 'Passage: The Mountain Sanctuary',
+      description:
+          'Extended reading passage targeting initial and medial S-sound flow.',
+      clinicalRationale:
+          'Sustained reading builds long-term vocal stamina and automaticity of continuous airflow channels.',
+      category: ExerciseCategory.reading,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.intermediate,
+      durationSeconds: 180,
+      tips: [
+        'Take a quiet diaphragmatic breath at every full stop.',
+        'Sigh gently into each "S" sound.',
+      ],
+      promptLines: [SentencePracticeDatabase.bookReadingPassages[0]],
+    ),
+    Exercise(
+      id: 'reading_03_slow_living',
+      title: 'Passage: The Art of Slow Living',
+      description:
+          'Extended reading passage targeting initial and medial P-sound light contacts.',
+      clinicalRationale:
+          'Trains conscious slow pacing and soft bilabial closure across literary prose.',
+      category: ExerciseCategory.reading,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.intermediate,
+      durationSeconds: 180,
+      tips: [
+        'Touch lips together with minimal pressure on all P-words.',
+        'Read with an unhurried, calm tempo.',
+      ],
+      promptLines: [SentencePracticeDatabase.bookReadingPassages[1]],
+    ),
+    Exercise(
+      id: 'reading_04_architecture',
+      title: 'Passage: The Architecture of Change',
+      description:
+          'Extended reading passage targeting clean CH-affricate releases.',
+      clinicalRationale:
+          'Develops palatal agility and confident consonant release in connected discourse.',
+      category: ExerciseCategory.reading,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.intermediate,
+      durationSeconds: 180,
+      tips: [
+        'Pucker lips slightly on CH words and drop the jaw cleanly.',
+        'Maintain steady diaphragmatic breath support.',
+      ],
+      promptLines: [SentencePracticeDatabase.bookReadingPassages[2]],
+    ),
+    Exercise(
+      id: 'reading_05_forest',
+      title: 'Passage: The Flow of the Forest',
+      description:
+          'Extended reading passage targeting soft F-sound tooth-on-lip placement.',
+      clinicalRationale:
+          'Conditions continuous air-stream flow through labiodental fricatives.',
+      category: ExerciseCategory.reading,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.intermediate,
+      durationSeconds: 180,
+      tips: [
+        'Feel the warm air escaping on every F-word without biting down.',
+        'Allow the voice to glide naturally from word to word.',
+      ],
+      promptLines: [SentencePracticeDatabase.bookReadingPassages[3]],
+    ),
+    Exercise(
+      id: 'reading_06_ocean_tide',
+      title: 'Passage: The Ocean’s Rhythm',
+      description:
+          'Connected speech passage designed for unbroken legato reading.',
+      clinicalRationale:
+          'Develops musical prosody and eliminates articulatory hesitation between words.',
+      category: ExerciseCategory.reading,
+      exerciseType: ExerciseType.metronome,
+      difficulty: ExerciseDifficulty.intermediate,
+      defaultBpm: 75,
+      durationSeconds: 180,
+      tips: [
+        'Keep vocal cords vibrating continuously through word boundaries.',
+        'Match the steady rhythm of the pacer.',
+      ],
+      promptLines: [SentencePracticeDatabase.bookReadingPassages[4]],
+    ),
+    Exercise(
+      id: 'reading_07_wisdom_pause',
+      title: 'Passage: The Wisdom of the Pause',
+      description:
+          'Reflective passage highlighting the strategic power of pausing in speech.',
+      clinicalRationale:
+          'Reconditions the psychological relationship with conversational silence.',
+      category: ExerciseCategory.reading,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 180,
+      tips: [
+        'Take generous, calm pauses at commas and periods.',
+        'Notice how relaxed your body feels during every pause.',
+      ],
+      promptLines: [SentencePracticeDatabase.bookReadingPassages[5]],
+    ),
+    Exercise(
+      id: 'reading_08_neuroplasticity',
+      title: 'Passage: The Science of Neuroplasticity',
+      description:
+          'Scientific passage exploring how deliberate practice rewires the brain’s speech networks.',
+      clinicalRationale:
+          'Combines high-level cognitive engagement with motor speech execution.',
+      category: ExerciseCategory.reading,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.advanced,
+      durationSeconds: 180,
+      tips: [
+        'Enunciate multi-syllabic scientific terms with light contacts.',
+        'Breathe from your lower abdomen throughout.',
+      ],
+      promptLines: [SentencePracticeDatabase.bookReadingPassages[8]],
+    ),
+    Exercise(
+      id: 'reading_09_letter_future',
+      title: 'Passage: A Letter to My Future Voice',
+      description:
+          'Emotional and motivational passage cementing speech self-acceptance and freedom.',
+      clinicalRationale:
+          'Reduces speech-related shame and autonomic fear conditioning through self-compassion.',
+      category: ExerciseCategory.reading,
+      exerciseType: ExerciseType.textPrompt,
+      difficulty: ExerciseDifficulty.beginner,
+      durationSeconds: 180,
+      tips: [
+        'Read with genuine emotion, warmth, and unhurried ease.',
+        'Feel the deep resonance of your voice in your chest.',
+      ],
+      promptLines: [SentencePracticeDatabase.bookReadingPassages[19]],
+    ),
   ];
 }
+

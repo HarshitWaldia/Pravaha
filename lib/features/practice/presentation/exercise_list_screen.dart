@@ -158,10 +158,12 @@ class _ExerciseListScreenState extends State<ExerciseListScreen>
       ExerciseCategory.oralMotor,
       ExerciseCategory.breathSupport,
       ExerciseCategory.fluencyPacing,
-      ExerciseCategory.cognitiveLinguistic,
+      ExerciseCategory.stammeringTypes,
       ExerciseCategory.stutteringModification,
+      ExerciseCategory.cognitiveLinguistic,
       ExerciseCategory.reading,
     ];
+
 
     final filtered = _filteredExercises;
 
@@ -484,21 +486,23 @@ class _ExerciseListScreenState extends State<ExerciseListScreen>
   String _getCategoryShortName(ExerciseCategory cat) {
     switch (cat) {
       case ExerciseCategory.articulation:
-        return 'Articulation (6)';
+        return 'Articulation';
       case ExerciseCategory.oralMotor:
-        return 'Oral Motor (6)';
+        return 'Oral Motor';
       case ExerciseCategory.breathSupport:
-        return 'Breath & Volume (5)';
+        return 'Breathing & Airflow';
       case ExerciseCategory.fluencyPacing:
-        return 'Fluency/Pacing (4)';
-      case ExerciseCategory.cognitiveLinguistic:
-        return 'Cognitive (5)';
+        return 'Fluency & Pacing';
+      case ExerciseCategory.stammeringTypes:
+        return 'Stammering Types (Initial/Medial/Final)';
       case ExerciseCategory.stutteringModification:
-        return 'Modification (6)';
+        return 'Modification Techniques';
+      case ExerciseCategory.cognitiveLinguistic:
+        return 'Cognitive Drills';
       case ExerciseCategory.reading:
-        return 'Reading';
+        return 'Reading & Passages';
       case ExerciseCategory.scenario:
-        return 'Scenarios';
+        return 'Real-World Scenarios';
     }
   }
 
@@ -512,16 +516,19 @@ class _ExerciseListScreenState extends State<ExerciseListScreen>
         return const Color(0xFF0288D1);
       case ExerciseCategory.fluencyPacing:
         return AppColors.primary;
-      case ExerciseCategory.cognitiveLinguistic:
-        return const Color(0xFF6A1B9A);
+      case ExerciseCategory.stammeringTypes:
+        return const Color(0xFFD84315);
       case ExerciseCategory.stutteringModification:
         return const Color(0xFF2E7D32);
+      case ExerciseCategory.cognitiveLinguistic:
+        return const Color(0xFF6A1B9A);
       case ExerciseCategory.reading:
         return AppColors.secondary;
       case ExerciseCategory.scenario:
         return AppColors.accentTeal;
     }
   }
+
 
   IconData _getExerciseTypeIcon(ExerciseType type) {
     switch (type) {
