@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/images/logo.png" alt="Pravāha Logo" width="120" style="border-radius: 24px; box-shadow: 0 4px 20px rgba(0, 106, 106, 0.2);" />
+<img src="assets/images/image.png" alt="Pravāha Logo" width="120" style="border-radius: 24px; box-shadow: 0 4px 20px rgba(0, 106, 106, 0.2);" />
 
 # Pravāha (प्रवाह)
 ### Offline Speech Therapy & Fluency Companion
