@@ -77,8 +77,11 @@ class _PacerVisualizerState extends State<PacerVisualizer>
   void didUpdateWidget(covariant PacerVisualizer oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.bpm != widget.bpm) {
-      _controller.dispose();
-      _initController();
+      final durationMs = (60000 / widget.bpm).round();
+      _controller.duration = Duration(milliseconds: durationMs);
+      if (widget.isPlaying && !_controller.isAnimating) {
+        _controller.repeat();
+      }
     } else if (oldWidget.isPlaying != widget.isPlaying) {
       if (widget.isPlaying) {
         _controller.repeat();
@@ -87,6 +90,7 @@ class _PacerVisualizerState extends State<PacerVisualizer>
       }
     }
   }
+
 
   @override
   void dispose() {

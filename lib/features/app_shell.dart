@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import '../core/data/exercise_library.dart';
 import '../core/models/exercise_model.dart';
+
 import '../core/theme/app_colors.dart';
 import 'home/presentation/home_screen.dart';
 import 'practice/presentation/exercise_list_screen.dart';
@@ -28,9 +30,13 @@ class _AppShellState extends State<AppShell> {
       ),
       const ExerciseListScreen(),
       PacedPracticeScreen(
-        exercise: ExerciseLibrary.allExercises[0],
+        exercise: ClinicalExerciseLibrary.allExercises.firstWhere(
+          (e) => e.category == ExerciseCategory.fluencyPacing,
+          orElse: () => ClinicalExerciseLibrary.allExercises[0],
+        ),
       ),
       const ProgressScreen(),
+
     ];
 
     return Scaffold(
