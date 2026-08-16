@@ -2,7 +2,7 @@
 
 <img src="assets/images/image.png" alt="Pravāha Logo" width="120" style="border-radius: 24px; box-shadow: 0 4px 20px rgba(0, 106, 106, 0.2);" />
 
-# Pravāha (प्रवाह)
+# Pravāha (प्रवाह:)
 ### Offline Speech Therapy & Fluency Companion
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.29-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
