@@ -39,26 +39,30 @@ class _PacerVisualizerState extends State<PacerVisualizer>
     );
 
     _scaleAnimation = TweenSequence<double>([
+      // Sharp, crisp downbeat pulse (0 to 25% of cycle)
       TweenSequenceItem(
-        tween: Tween<double>(begin: 0.85, end: 1.18)
-            .chain(CurveTween(curve: Curves.easeInOutCubic)),
-        weight: 50.0,
+        tween: Tween<double>(begin: 0.88, end: 1.22)
+            .chain(CurveTween(curve: Curves.easeOutBack)),
+        weight: 25.0,
       ),
+      // Smooth decay back to base (25% to 100% of cycle)
       TweenSequenceItem(
-        tween: Tween<double>(begin: 1.18, end: 0.85)
-            .chain(CurveTween(curve: Curves.easeInOutCubic)),
-        weight: 50.0,
+        tween: Tween<double>(begin: 1.22, end: 0.88)
+            .chain(CurveTween(curve: Curves.easeInOut)),
+        weight: 75.0,
       ),
     ]).animate(_controller);
 
     _glowAnimation = TweenSequence<double>([
       TweenSequenceItem(
-        tween: Tween<double>(begin: 4.0, end: 24.0),
-        weight: 50.0,
+        tween: Tween<double>(begin: 2.0, end: 32.0)
+            .chain(CurveTween(curve: Curves.easeOut)),
+        weight: 25.0,
       ),
       TweenSequenceItem(
-        tween: Tween<double>(begin: 24.0, end: 4.0),
-        weight: 50.0,
+        tween: Tween<double>(begin: 32.0, end: 2.0)
+            .chain(CurveTween(curve: Curves.easeInOut)),
+        weight: 75.0,
       ),
     ]).animate(_controller);
 
@@ -79,7 +83,8 @@ class _PacerVisualizerState extends State<PacerVisualizer>
     if (oldWidget.bpm != widget.bpm) {
       final durationMs = (60000 / widget.bpm).round();
       _controller.duration = Duration(milliseconds: durationMs);
-      if (widget.isPlaying && !_controller.isAnimating) {
+      if (widget.isPlaying) {
+        // Immediately restart the animation loop at the new BPM
         _controller.repeat();
       }
     } else if (oldWidget.isPlaying != widget.isPlaying) {
@@ -90,6 +95,7 @@ class _PacerVisualizerState extends State<PacerVisualizer>
       }
     }
   }
+
 
 
   @override
